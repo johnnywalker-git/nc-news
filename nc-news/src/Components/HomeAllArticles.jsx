@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ArticleCard from "./ArticleCard"
-import getAllArticles from "./utils/api"
+import {getAllArticles} from "./utils/api"
 
 export default function HomeAllArticles() {
     const [articles, setArticles] = useState([])
@@ -17,7 +17,7 @@ export default function HomeAllArticles() {
 
     return loading ? 
      ( <div>
-            <div class="loader" alt="website loading"></div>
+            <div className="loader" alt="website loading"></div>
         </div>
     )   : 
     
