@@ -4,20 +4,26 @@ import getAllArticles from "./utils/api"
 
 export default function HomeAllArticles() {
     const [articles, setArticles] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getAllArticles()
         .then((data) => {
             setArticles(data)     
+        }).then(() => {
+            setLoading(false)
         })
     }, [])
 
-    return (
-        <div>
-            {articles.map((article) => {
-                return <ArticleCard article={article} key={article.article_id}/>
-            })}
-            
+    return loading ? 
+     ( <div>
+            <div class="loader" alt="website loading"></div>
         </div>
+    )   : 
+    
+    (
+        articles.map((article) => {
+            return <ArticleCard article={article} key={article.article_id}/>
+        })
     )
 }
