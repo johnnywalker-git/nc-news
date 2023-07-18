@@ -1,4 +1,19 @@
+import { useEffect } from "react"
+import { getTopics } from "./utils/api"
+
+
 export default function Nav() {
+
+
+    useEffect(() => {
+        getTopics().then((data) => {
+            console.log(data)
+        })
+    }, [])
+
+
+
+
     return (
         <div className="nav-bar">
             <ul>
