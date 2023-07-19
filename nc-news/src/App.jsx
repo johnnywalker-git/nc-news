@@ -7,11 +7,13 @@ import HomeAllArticles from './Components/HomeAllArticles'
 
 
 function App() {
+  const [topics, setTopics] = useState([])
+
   return (
     <>
       <div>
        <Header />
-       <Nav />
+       <Nav topics={topics} setTopics={setTopics}/>
           <Routes>
           <Route path="/" element={<HomeAllArticles />} />
           <Route path="/articles" element={<HomeAllArticles />} />

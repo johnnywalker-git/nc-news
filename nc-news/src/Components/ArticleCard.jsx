@@ -1,5 +1,4 @@
 export default function ArticleCard({article}) {
-    console.log(article)
     return(
         <div className="content-card">
             <div>

@@ -17,7 +17,7 @@ export default function HomeAllArticles() {
 
     return loading ? 
      ( <div>
-            <div class="loader" alt="website loading"></div>
+            <div className="loader" alt="website loading"></div>
         </div>
     )   : 
     
