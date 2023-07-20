@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react"
-import { getSelectedArticle } from './Components/utils/api';
-import ArticleComments from './Components/ArticleComments';
+import { getSelectedArticle } from './utils/api';
+import ArticleComments from './ArticleComments';
 
 
 

@@ -4,7 +4,7 @@ import './App.css'
 import Header from './Components/Header'
 import Nav from './Components/Nav'
 import HomeAllArticles from './Components/HomeAllArticles'
-import SingleArticle from './SingleArticle';
+import SingleArticle from './Components/SingleArticle';
 
 
 function App() {
