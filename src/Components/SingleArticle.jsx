@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react"
-import { getSelectedArticle } from './Components/utils/api';
+import { getSelectedArticle } from './utils/api';
 import Votes from './Votes';
 
 
@@ -39,7 +39,7 @@ export default function SingleArticle({votes, setVotes}) {
             <div className="article-text-box">
                 <p>{currentArticle.body}</p>
             </div>
-            <Votes currentVotes={votes} setVotes={setVotes}/>
+            <Votes currentVotes={votes} setVotes={setVotes} articleId={currentArticle.article_id} votes={currentArticle.votes}/>
         </div>
     </div>
     )
