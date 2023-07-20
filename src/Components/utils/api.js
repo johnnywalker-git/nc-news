@@ -12,6 +12,7 @@ export const  getSelectedArticle = (id) => {
    })
 }
 
+
 export const getArticleComment = (id) => {
    return axios.get(`https://nc-news-3sba.onrender.com/api/articles/${id}/comments`).then((response) => {
       return response.data
