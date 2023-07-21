@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react"
 import { getSelectedArticle } from './utils/api';
 import ArticleComments from './ArticleComments';
+import AddComment from './AddComment';
 
 
 
@@ -41,6 +42,7 @@ export default function SingleArticle() {
         </div>
 
         <ArticleComments articleId={currentArticle.article_id}/>
+        <AddComment />
 
     </div>
     )
