@@ -42,8 +42,7 @@ export default function SingleArticle() {
         </div>
 
         <ArticleComments articleId={currentArticle.article_id}/>
-        <AddComment />
-
+        <AddComment articleId={currentArticle.article_id}/>
     </div>
     )
 }
