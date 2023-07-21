@@ -1,27 +1,28 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { addArticleComment } from "./utils/api"
 
 export default function AddComment({articleId}) {
 
-    const [formData, updateFormData] = useState()
+    const [formData, updateFormData] = useState(false)
+    const [isError, setIsError] = useState()
 
     function addComment(e) {
         e.preventDefault()
         updateFormData({"username": e.target.nameBox.value, "body":  e.target.commentBox.value})
-        
-        console.log(formData, "just before req.")
-
-
-        // addArticleComment(articleId,formData).then((response) => {
-        //     console.log(response)
-        // })
-    
-    
     }
 
+   useEffect(() => {
+
+    formData && addArticleComment(articleId,formData).then((response) => {
+        console.log(response)
+    }).catch((err) => {
+        setIsError(err.message)
+    })
+},[formData])
 
 
-    return formData ?  (
+
+    return formData && !isError ?  (
         <div className="add-comment-container">
             <form onSubmit={addComment}><div className="comment-card">
             <p>Author: {formData.username}</p>
@@ -35,9 +36,11 @@ export default function AddComment({articleId}) {
                 </label>
                 <button alt="submit-button">Submit</button>
             </form>
-        </div>
+        </div> 
         ): 
     (
+        <div className="error-state-post-comment">
+        <p>{isError}</p>
     <div className="add-comment-container">
         <form onSubmit={addComment}>
             <label htmlFor="name-box">
@@ -48,6 +51,7 @@ export default function AddComment({articleId}) {
             </label>
             <button alt="submit-button">Submit</button>
         </form>
+    </div>
     </div>
     )
 }
