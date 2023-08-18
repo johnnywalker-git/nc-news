@@ -44,7 +44,7 @@ export default function AddComment({articleId}) {
     <div className="add-comment-container">
         <form onSubmit={addComment}>
             <label htmlFor="name-box">
-            <input placeholder="name" name="nameBox"alt="name box" id="name-box"></input>
+            <input placeholder="name" name="nameBox"alt="name box" id="name-box" value="cooljmessy" disabled="true"></input>
             </label>
             <label htmlFor="comment-box">
             <textarea placeholder="Comment" name="commentBox" id="comment-box"/>
