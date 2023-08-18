@@ -12,9 +12,15 @@ export const  getSelectedArticle = (id) => {
    })
 }
 
+
 export const updateArticleVotes = (id,voteObj) => {
    return axios.patch(`https://nc-news-3sba.onrender.com/api/articles/${id}`,voteObj).then((response) => {
       return response.data.article.newArticle[0].votes
+
+
+export const getArticleComment = (id) => {
+   return axios.get(`https://nc-news-3sba.onrender.com/api/articles/${id}/comments`).then((response) => {
+      return response.data
    })
 }
 

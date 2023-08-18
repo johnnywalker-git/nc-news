@@ -5,6 +5,13 @@ import Votes from './Votes';
 
 
 export default function SingleArticle({votes, setVotes}) {
+
+import ArticleComments from './ArticleComments';
+
+
+
+export default function SingleArticle() {
+
     const {id} = useParams()
     const [currentArticle,setCurrentArticle] = useState("Hi")
     const [loading, seLoading] = useState(true)
@@ -16,6 +23,7 @@ export default function SingleArticle({votes, setVotes}) {
             console.log(article)
             setCurrentArticle(article)
             setVotes(article.votes)
+            setCurrentArticle(article)
             seLoading(false)
         })
     }, [])
@@ -39,8 +47,11 @@ export default function SingleArticle({votes, setVotes}) {
             <div className="article-text-box">
                 <p>{currentArticle.body}</p>
             </div>
+
             <Votes currentVotes={votes} setVotes={setVotes} articleId={currentArticle.article_id} votes={currentArticle.votes}/>
         </div>
+        </div>
+        <ArticleComments articleId={currentArticle.article_id}/>
     </div>
     )
 }

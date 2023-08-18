@@ -8,7 +8,9 @@ import SingleArticle from './Components/SingleArticle';
 
 
 function App() {
+
   const [votes,setVotes] = useState("hello")
+
   return (
     <>
       <div>
@@ -17,7 +19,11 @@ function App() {
           <Routes>
           <Route path="/" element={<HomeAllArticles />} />
           <Route path="/articles" element={<HomeAllArticles />} />
+
           <Route path="/articles/:id" element={<SingleArticle votes={votes} setVotes={setVotes}/>} />
+
+          <Route path="/articles/:id" element={<SingleArticle />} />
+
           <Route path="*" element={<p>"No Route found"</p>} />
           </Routes>
       </div>
