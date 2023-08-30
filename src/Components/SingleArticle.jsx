@@ -2,15 +2,12 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react"
 import { getSelectedArticle } from './utils/api';
 import Votes from './Votes';
-
-
-export default function SingleArticle({votes, setVotes}) {
-
 import ArticleComments from './ArticleComments';
 
 
 
-export default function SingleArticle() {
+export default function SingleArticle({votes, setVotes}) {
+
 
     const {id} = useParams()
     const [currentArticle,setCurrentArticle] = useState("Hi")
@@ -33,13 +30,12 @@ export default function SingleArticle() {
             <div className="loader" alt="website loading"></div>
         </div>
     )   : 
-    (<div 
-    className="full-article">
+        ( <div className="full-article">
       <h1>{currentArticle.title}</h1>
         <div className="article-box">
             <div className="article-image-box">
             <img src={currentArticle.article_img_url} />
-        </div>
+            </div>
             <div className="article-author-date-box">
                 <p>{currentArticle.author}</p>
                 <p>{currentArticle.created_at}</p>
@@ -47,11 +43,9 @@ export default function SingleArticle() {
             <div className="article-text-box">
                 <p>{currentArticle.body}</p>
             </div>
-
             <Votes currentVotes={votes} setVotes={setVotes} articleId={currentArticle.article_id} votes={currentArticle.votes}/>
-        </div>
         </div>
         <ArticleComments articleId={currentArticle.article_id}/>
     </div>
-    )
-}
+        )
+    }
