@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import ArticleCard from "./ArticleCard"
 import {getAllArticles} from "./utils/api"
+import Votes from "./Votes"
+
+
 
 export default function HomeAllArticles() {
     const [articles, setArticles] = useState([])
@@ -23,6 +26,12 @@ export default function HomeAllArticles() {
     
     (
         articles.map((article) => {
+
+            return (
+            <div className="articles-votes-card">
+            <ArticleCard article={article} key={article.article_id}/>
+            </div>
+            )
             return <ArticleCard article={article} key={article.article_id}/>
         })
     )
