@@ -25,3 +25,9 @@ export const getArticleComment = (id) => {
    })
 }
 
+export const addArticleComment = (id,userComment) => {
+   return axios.post(`https://nc-news-3sba.onrender.com/api/articles/${id}/comments`,userComment).then((response) => {
+      return response.data.comment
+   })
+}
+

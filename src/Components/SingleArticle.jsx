@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { getSelectedArticle } from './utils/api';
 import Votes from './Votes';
 import ArticleComments from './ArticleComments';
+import AddComment from './AddComment';
 
 
 
@@ -46,6 +47,7 @@ export default function SingleArticle({votes, setVotes}) {
             <Votes currentVotes={votes} setVotes={setVotes} articleId={currentArticle.article_id} votes={currentArticle.votes}/>
         </div>
         <ArticleComments articleId={currentArticle.article_id}/>
+        <AddComment articleId={currentArticle.article_id}/>
     </div>
         )
     }
