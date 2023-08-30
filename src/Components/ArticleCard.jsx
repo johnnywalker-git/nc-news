@@ -1,9 +1,13 @@
 
+export default function ArticleCard({article}) {
+
+
 import { Link } from 'react-router-dom';
 
 
 
 export default function ArticleCard({article}) {
+
 
 
 
@@ -15,6 +19,8 @@ export default function ArticleCard({article}) {
             <h2>{article.title}</h2>
             <h3>{article.author}</h3>
             <p>{article.comment_count}</p>
+
+            <button>Link</button>
             <Link to={`/articles/${article.article_id}`}>See more...</Link>
         </div>
     )

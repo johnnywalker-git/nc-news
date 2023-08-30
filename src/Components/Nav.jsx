@@ -1,3 +1,28 @@
+import { useEffect, useState } from "react"
+import { getTopics } from "./utils/api"
+import { Link } from "react-router-dom"
+
+
+
+export default function Nav({topics, setTopics}) {
+
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        getTopics().then((data) => {
+            setTopics(data)
+        }).then(() => {
+            setIsLoading(false)
+        })
+    }, [])
+
+    return (
+        <div className="nav-bar">
+            
+                {topics.map((topic) => {
+                    return <Link className="link" to={`/articles/${topic.slug}`} key={topic.slug}><p>{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</p></Link>
+                })}
+     
 export default function Nav() {
     return (
         <div className="nav-bar">

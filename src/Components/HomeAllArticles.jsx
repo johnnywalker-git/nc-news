@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import ArticleCard from "./ArticleCard"
+import getAllArticles from "./utils/api"
+import { useParams } from "react-router-dom"
 import {getAllArticles} from "./utils/api"
 import Votes from "./Votes"
 
@@ -8,6 +10,28 @@ import Votes from "./Votes"
 export default function HomeAllArticles() {
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
+    const { topic } = useParams();
+    console.log(topic)
+ 
+    useEffect(() => {
+        getAllArticles()
+        .then((data) => {
+            if(topic !== undefined){
+            const result = filterByTopic(data)
+            setArticles(result)}  
+            else {
+            setArticles(data)
+            }
+        }).then(() => {
+            setLoading(false)
+        })
+    }, [topic])
+
+    function filterByTopic(articles) {
+        return articles.filter((article) => {
+            return article.topic === topic
+        })
+    }
 
     useEffect(() => {
         getAllArticles()
@@ -17,6 +41,7 @@ export default function HomeAllArticles() {
             setLoading(false)
         })
     }, [])
+ 
 
     return loading ? 
      ( <div>
@@ -24,6 +49,14 @@ export default function HomeAllArticles() {
         </div>
     )   : 
     
+    (   
+        <div>
+            <h1>{topic ? `${topic.charAt(0).toUpperCase() + topic.slice(1)} Articles` : "All Articles"}</h1>
+       { articles.map((article) => {
+            return <ArticleCard article={article} key={article.article_id}/>
+        })}
+        </div>
+
     (
         articles.map((article) => {
 

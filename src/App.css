@@ -4,6 +4,7 @@
 }
 
 
+
 .heading-container {
     display: flex;
     border: 4px solid red;
@@ -92,6 +93,7 @@ form input {
     100% { transform: rotate(360deg); }
   }
 
+
   .article-box {
     display: flex;
     flex-direction: column;
@@ -109,13 +111,12 @@ form input {
     justify-content: space-evenly;
   }
 
-
-
   .votes-single-article {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 1em;
+    margin: 1em
+}
 
   .comment-card {
     border: 4px solid red;
@@ -125,7 +126,6 @@ form input {
     flex-direction: column;
     margin: 10px;
   }
-
 
 
 

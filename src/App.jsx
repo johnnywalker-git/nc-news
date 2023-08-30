@@ -7,6 +7,11 @@ import HomeAllArticles from './Components/HomeAllArticles'
 import SingleArticle from './Components/SingleArticle';
 
 
+
+function App() {
+  const [topics, setTopics] = useState([])
+
+
 function App() {
 
   const [votes,setVotes] = useState("hello")
@@ -15,6 +20,11 @@ function App() {
     <>
       <div>
        <Header />
+       <Nav topics={topics} setTopics={setTopics}/>
+          <Routes>
+          <Route path="/" element={<HomeAllArticles />} />
+          <Route path="/articles" element={<HomeAllArticles />} />
+          <Route path="/articles/:topic" element={<HomeAllArticles />} />
        <Nav />
           <Routes>
           <Route path="/" element={<HomeAllArticles />} />
