@@ -2,6 +2,10 @@ import { useEffect, useState } from "react"
 import ArticleCard from "./ArticleCard"
 import getAllArticles from "./utils/api"
 import { useParams } from "react-router-dom"
+import {getAllArticles} from "./utils/api"
+import Votes from "./Votes"
+
+
 
 export default function HomeAllArticles() {
     const [articles, setArticles] = useState([])
@@ -29,6 +33,16 @@ export default function HomeAllArticles() {
         })
     }
 
+    useEffect(() => {
+        getAllArticles()
+        .then((data) => {
+            setArticles(data)     
+        }).then(() => {
+            setLoading(false)
+        })
+    }, [])
+ 
+
     return loading ? 
      ( <div>
             <div className="loader" alt="website loading"></div>
@@ -42,5 +56,16 @@ export default function HomeAllArticles() {
             return <ArticleCard article={article} key={article.article_id}/>
         })}
         </div>
+
+    (
+        articles.map((article) => {
+
+            return (
+            <div className="articles-votes-card">
+            <ArticleCard article={article} key={article.article_id}/>
+            </div>
+            )
+            return <ArticleCard article={article} key={article.article_id}/>
+        })
     )
 }

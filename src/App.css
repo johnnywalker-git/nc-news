@@ -13,6 +13,28 @@
     justify-content: space-between;
 }
 
+.add-comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 4px solid red;
+  margin: 10px;
+}
+.add-comment-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+form input {
+  text-align: center;
+}
+
+
 .mobile-menu-icon {
     background-color: red;
     padding: 5px;
@@ -69,6 +91,40 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+
+  .article-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .article-image-box img {
+    width: 90%;
+  }
+
+  .article-author-date-box {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .votes-single-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em
+}
+
+  .comment-card {
+    border: 4px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
   }
 
 
