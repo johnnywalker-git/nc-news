@@ -12,7 +12,6 @@ export default function AddComment({articleId}) {
     }
 
    useEffect(() => {
-
     formData && addArticleComment(articleId,formData).then((response) => {
         console.log(response)
     }).catch((err) => {
@@ -23,11 +22,12 @@ export default function AddComment({articleId}) {
 
 
     return formData && !isError ?  (
-        <div className="add-comment-container">
-            <form onSubmit={addComment}><div className="comment-card">
+            <div className="newComment">
+            <form onSubmit={addComment}>
+                <div className="comment-card">
             <p>Author: {formData.username}</p>
             <p>Comment: {formData.body}</p>
-            </div>
+            <div className="add-comment-container">
                 <label htmlFor="name-box">
                 <input placeholder="name" name="nameBox"alt="name box" id="name-box"></input>
                 </label>
@@ -35,8 +35,10 @@ export default function AddComment({articleId}) {
                 <textarea placeholder="Comment" name="commentBox" id="comment-box"/>
                 </label>
                 <button alt="submit-button">Submit</button>
+                </div>
+                </div>
             </form>
-        </div> 
+            </div>
         ): 
     (
         <div className="error-state-post-comment">
