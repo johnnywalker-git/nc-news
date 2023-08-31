@@ -19,7 +19,7 @@ export default function Nav({topics, setTopics}) {
     return !isLoading ? (
         <div className="nav-bar">
                 {topics.map((topic) => {
-                    return <Link className="link" to={`/articles/${topic.slug}`} key={topic.slug}><p>{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</p></Link>
+                    return <Link className="link" to={`/articles/topics/${topic.slug}`} key={topic.slug}><p>{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</p></Link>
                 })}
                  <ul>
                 <li className="nav-item">Example</li>
