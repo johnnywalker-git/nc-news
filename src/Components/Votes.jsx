@@ -15,9 +15,7 @@ export default function Votes({currentVotes,setVotes,articleId}) {
         // }   else {
         //     setLocalVoteAmount((current) => {
         //         return current - 1 
-        //     })
-        console.log(e)
-        let apiVoteChange = voteChange
+        //     })        let apiVoteChange = voteChange
         if(localVoteAmount === 1 && voteChange === -1) {
             apiVoteChange = -2
         }

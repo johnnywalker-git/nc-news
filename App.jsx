@@ -14,10 +14,10 @@ function App() {
        <Header />
        <Nav />
           <Routes>
-          <Route path="/" element={<HomeAllArticles />} />
-          <Route path="/articles" element={<HomeAllArticles />} />
-          <Route path="/articles/:id" element={<SingleArticle />} />
-          <Route path="*" element={<p>"No Route found"</p>} />
+          <Route exact path="/" element={<HomeAllArticles />} />
+          <Route exact path="/articles" element={<HomeAllArticles />} />
+          <Route exact path="/articles/:id" element={<SingleArticle />} />
+          <Route exact path="*" element={<p>"No Route found"</p>} />
           </Routes>
       </div>
      

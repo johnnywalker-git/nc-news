@@ -13,7 +13,6 @@ export default function AddComment({articleId}) {
 
    useEffect(() => {
     formData && addArticleComment(articleId,formData).then((response) => {
-        console.log(response)
     }).catch((err) => {
         setIsError(err.message)
     })
