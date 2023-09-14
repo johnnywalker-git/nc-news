@@ -8,15 +8,6 @@ export default function Votes({currentVotes,setVotes,articleId}) {
     let apiVoteChange = 0
 
     function handleClick(e,voteChange) {
-        // setLocalVoteAmount(0)
-        // if(e.target.textContent === "Vote up") {
-        //     setLocalVoteAmount((current) => {
-        //         return current  + 1 
-        //     })
-        // }   else {
-        //     setLocalVoteAmount((current) => {
-        //         return current - 1 
-        //     })        let apiVoteChange = voteChange
         if(localVoteAmount === 1 && voteChange === -1) {
             apiVoteChange = -2
         }
@@ -36,16 +27,17 @@ export default function Votes({currentVotes,setVotes,articleId}) {
                 setIsError(errMessage)
                 console.log(errMessage)
             })
-}
+            }
 
-    // useEffect(() => {
-    //     updateArticleVotes(articleId, { "inc_votes" : localVoteAmount})
-    //     .then((data) => {
-    //         console.log(data)
-    //     }).catch((err)=> {
-    //         console.log("ERROR", err)
-    //     })
-    // }, [localVoteAmount])
+    useEffect(() => {
+        updateArticleVotes(articleId, { "inc_votes" : localVoteAmount})
+        .then((data) => {
+            console.log(data)
+        }).catch((err)=> {
+            console.log("ERROR", err)
+        })
+    }, [localVoteAmount])
+
     return !isError ?
     ( 
     <div className="votes-single-article">
