@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 export default function Votes({currentVotes,setVotes,articleId}) {
     const [localVoteAmount, setLocalVoteAmount] = useState(0)
     const [isError, setIsError] = useState(false)
+    let apiVoteChange = 0
 
     function handleClick(e,voteChange) {
         // setLocalVoteAmount(0)

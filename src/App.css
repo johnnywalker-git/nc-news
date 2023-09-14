@@ -13,6 +13,19 @@
     justify-content: space-between;
 }
 
+h1 {
+  color: black;
+}
+
+a {
+  color: rgb(255, 254, 254);
+}
+
+.content-card a {
+  color: black;
+  
+}
+
 .add-comment-container {
   display: flex;
   flex-direction: column;

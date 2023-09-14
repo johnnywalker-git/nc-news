@@ -13,7 +13,6 @@ export default function SingleArticle({votes, setVotes}) {
     const {id} = useParams()
     const [currentArticle,setCurrentArticle] = useState("Hi")
     const [loading, setLoading] = useState(true)
-    console.log(id, "id from params")
     useEffect(() => {
         getSelectedArticle(id).then((data) => {
             return data
@@ -25,8 +24,6 @@ export default function SingleArticle({votes, setVotes}) {
             console.log(article)
         })
     }, [id])
-
-    console.log(id)
 
     return loading ? 
      ( <div>

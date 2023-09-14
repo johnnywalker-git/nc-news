@@ -29,16 +29,6 @@ export default function HomeAllArticles() {
         })
     }
 
-    useEffect(() => {
-        getAllArticles()
-        .then((data) => {
-            setArticles(data)     
-        }).then(() => {
-            setLoading(false)
-        })
-    }, [])
- 
-
     return loading ? 
      ( <div>
             <div className="loader" alt="website loading"></div>
