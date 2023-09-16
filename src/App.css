@@ -26,6 +26,12 @@ a {
   
 }
 
+.vote-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .add-comment-container {
   display: flex;
   flex-direction: column;
