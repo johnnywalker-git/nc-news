@@ -9,7 +9,9 @@ export default function ArticleCard({article}) {
             </div>
             <h2>{article.title}</h2>
             <h3>{article.author}</h3>
-            <p>{article.comment_count}</p>
+            <p>Votes: {article.votes}</p>
+            <p>Comments: {article.comment_count}</p>
+            <p>Date: {article.created_at}</p>
             <Link to={`/articles/${article.article_id}`}>See more...</Link>
         </div>
     )

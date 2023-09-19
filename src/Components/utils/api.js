@@ -1,11 +1,28 @@
 import axios from "axios";
 
 
-export const getAllArticles = () => {
-   return axios.get('https://nc-news-3sba.onrender.com/api/articles').then((response) => {
+export const getAllArticles = (sort,order) => {
+   let url = 'https://nc-news-3sba.onrender.com/api/articles';
+
+   if (sort || order) {
+     url += '?'; 
+     if (sort) {
+       url += `sort_by=${sort}`;
+     }
+     if (order) {
+       url += `${sort ? '&' : ''}order=${order}`;
+     }
+   }
+   return axios.get(url).then((response) => {
     return response.data
    })
 }
+
+// export const getAllArticles = (sort, order) => {
+//    return axios.get('https://nc-news-3sba.onrender.com/api/articles').then((response) => {
+//     return response.data
+//    })
+// }
 
 export const getTopics = () => {
    return axios.get('https://nc-news-3sba.onrender.com/api/topics').then((response) => {

@@ -12,7 +12,6 @@ export default function AllArticles({articles, setArticles}) {
             setArticles(data)     
         })
     }, [])
-
     return (
         <div>
             {articles.map((article) => {

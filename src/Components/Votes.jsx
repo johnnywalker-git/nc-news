@@ -13,7 +13,6 @@ export default function Votes({ currentVotes, setVotes, articleId }) {
     if(buttonId === "up") {
         setLiked((prev) => {
             prev ? setLocalVoteAmount(0) : setLocalVoteAmount(1)
-            console.log(localVoteAmount)
             return !prev
         })
     }
@@ -23,15 +22,11 @@ export default function Votes({ currentVotes, setVotes, articleId }) {
             return !prev
         })
     }
-
-    console.log(localVoteAmount)
-
   }
 
   useEffect(() => {
     updateArticleVotes(articleId, { "inc_votes": (localVoteAmount)  })
       .then((data) => {
-        console.log(data);
       })
       .catch((err) => {
         console.log("ERROR", err);
