@@ -18,12 +18,6 @@ export const getAllArticles = (sort,order) => {
    })
 }
 
-// export const getAllArticles = (sort, order) => {
-//    return axios.get('https://nc-news-3sba.onrender.com/api/articles').then((response) => {
-//     return response.data
-//    })
-// }
-
 export const getTopics = () => {
    return axios.get('https://nc-news-3sba.onrender.com/api/topics').then((response) => {
     return response.data

@@ -65,9 +65,11 @@ export default function HomeAllArticles() {
                 <button>Reset</button>
             </form>
             <h1>{topic ? `${topic.charAt(0).toUpperCase() + topic.slice(1)} Articles` : "All Articles"}</h1>
+            <div className="article-cards">
        {articles.map((article) => {
             return <ArticleCard article={article} key={article.article_id}/>
         })}
+        </div>
         </div>
     )
 }
