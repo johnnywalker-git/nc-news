@@ -47,7 +47,7 @@ export default function HomeAllArticles() {
     )   : 
     
     (   
-        <div>
+        <div className="home-all-articles">
             <form action="">
             <label htmlFor="order">Sort by:</label>
                 <select name="order" id="order" onChange={handleSortChange}>
