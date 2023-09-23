@@ -64,6 +64,7 @@ margin-right: 1em;
 
 h1 {
   color: black;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 a {
@@ -73,6 +74,7 @@ a {
 #root {
   background-color: rgb(135, 135, 135);
 }
+
 
 
 .content-card a {
@@ -254,6 +256,12 @@ form input {
     }
 }
 
+.h-a-a-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
@@ -273,14 +281,18 @@ form input {
 
   .article-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     justify-content: center;
     align-items: center;
   }
 
+  .article-image-box  {
+    width: 30%;
+  }
+
   .article-image-box img {
-    width: 90%;
+    width: 100%;
   }
 
   .article-author-date-box {

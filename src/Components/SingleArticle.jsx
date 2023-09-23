@@ -31,11 +31,12 @@ export default function SingleArticle({votes, setVotes}) {
         </div>
     )   : 
         ( <div className="full-article">
-      <h1>{currentArticle.title}</h1>
         <div className="article-box">
             <div className="article-image-box">
             <img src={currentArticle.article_img_url} />
             </div>
+            <div className="article-info-box">
+      <h1>{currentArticle.title}</h1>
             <div className="article-author-date-box">
                 <p>{currentArticle.author}</p>
                 <p>{currentArticle.created_at}</p>
@@ -43,6 +44,7 @@ export default function SingleArticle({votes, setVotes}) {
             <div className="article-text-box">
                 <p>{currentArticle.body}</p>
             </div>
+        </div>
             <Votes currentVotes={votes} setVotes={setVotes} articleId={currentArticle.article_id} votes={currentArticle.votes}/>
         </div>
         <ArticleComments articleId={currentArticle.article_id}/>
