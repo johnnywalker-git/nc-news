@@ -1,4 +1,7 @@
 * {
+/* 
+  background-color: #8f8f8f;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23fca2a2' fill-opacity='0.35'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
     margin: 0;
     box-sizing: border-box;
 }
@@ -122,7 +125,7 @@ form input {
 
 .mobile-menu-icon {
     background-color: red;
-    padding: 5px;
+    padding: 6px;
     margin-right: 10px;
 }
 
@@ -256,6 +259,8 @@ form input {
     }
 }
 
+
+
 .h-a-a-heading {
   display: flex;
   justify-content: center;
@@ -287,13 +292,32 @@ form input {
     align-items: center;
   }
 
-  .article-image-box  {
-    width: 30%;
+  .article-image-box {
+    position: relative; /* Set the parent container to relative positioning */
+  }
+  
+  .votes-overlay {
+    position: absolute; /* Set the votes overlay to absolute positioning */
+    top: auto; /* Adjust the top position as needed */
+    bottom: 10px;
+    left: 40%; /* Adjust the left position as needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Add background color */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1; /* Ensure the votes overlay is above the image */
   }
 
-  .article-image-box img {
-    width: 100%;
+  .votes-overlay button {
+    background-color: #d9042700;
   }
+
+ 
+
+
+
 
   .article-author-date-box {
     display: flex;
