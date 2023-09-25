@@ -212,10 +212,7 @@ form input {
   transition: 0.4s;
 }
 
-.votes-overlay {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .card-image {
   width: 300px;
@@ -226,7 +223,6 @@ form input {
 
 .votes-overlay {
   position: absolute;
-  top: 10px; /* Adjust the top position as needed */
   left: 10px; /* Adjust the left position as needed */
   background-color: rgba(0, 0, 0, 0.7); /* Add background color */
   color: white;
@@ -236,9 +232,6 @@ form input {
   font-size: 14px;
   z-index: 1; /* Ensure the votes overlay is above the image */
 }
-
-
-
 
 .content-card {
     margin: 20px;
@@ -257,6 +250,15 @@ form input {
       cursor: pointer;
       box-shadow: 0 0 .2px .1px rgba(255, 255, 255, 0.271);
     }
+}
+
+.article-info-box {
+  background-color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    margin: 1em;
+
 }
 
 
@@ -288,21 +290,70 @@ form input {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 1em;
   }
 
   .article-image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative; /* Set the parent container to relative positioning */
+    border: 4px solid white;
+    border-radius: 20px;
+    margin: 1em;
+    max-width: 600px;
+    object-fit: fill;
+    background-color: whitesmoke;
+  }
+
+  .article-box p, .article-box h1 {
+    text-align: justify;
+    padding: .5em;
+  }
+
+  .article-image-box img {
+    border-radius: 20px;
+    width: 100%;
+  }
+
+
+  .article-info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1; /* Allow it to grow and take up available space */
+    max-width: 600px;
+  }
+
+  .article-info-box p {
+    padding: 1em;
   }
   
   .votes-overlay {
     position: absolute; /* Set the votes overlay to absolute positioning */
     top: auto; /* Adjust the top position as needed */
-    bottom: 10px;
+    bottom: 5%;
     left: 40%; /* Adjust the left position as needed */
-    background-color: rgba(0, 0, 0, 0.7); /* Add background color */
-    color: white;
+    background-color: rgba(226, 226, 226, 0.793); /* Add background color */
+    color: rgb(0, 0, 0);
+    /* padding: 5px 10px; */
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1; /* Ensure the votes overlay is above the image */
+  }
+
+  .votes-overlay-all {
+    display: flex;
+    position: absolute; /* Set the votes overlay to absolute positioning */
+    top: auto; /* Adjust the top position as needed */
+    top: 3%;
+    left: 5%; /* Adjust the left position as needed */
+    background-color: rgba(226, 226, 226, 0.793); /* Add background color */
+    color: rgb(0, 0, 0);
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -314,14 +365,17 @@ form input {
     background-color: #d9042700;
   }
 
- 
-
-
-
+  .all-article-comments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .article-author-date-box {
     display: flex;
-    justify-content: space-evenly;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .votes-single-article {
@@ -331,13 +385,34 @@ form input {
     margin: 1em
 }
 
+.author-date-comment {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.comment-text {
+  padding: 1em;
+  width: 80%;
+  text-align: justify;
+}
+
+.comment-title {
+ text-align: left;
+}
+
   .comment-card {
-    border: 4px solid red;
+    width: 80%;
+    border: 4px solid white;
+    background-color: white;
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    margin: 10px;
+    margin: 2px;
   }
 
 

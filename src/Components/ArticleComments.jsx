@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import { getArticleComment } from "./utils/api";
 import { useSearchParams } from "react-router-dom";
+import { formatDistanceToNow } from 'date-fns';
+
 
 export default function ArticleComments({articleId}) {
     const [isLoading, setIsLoading] = useState(true)
     const [comments,setComments] = useState([])
+
+    function formatDateToAgo(isoDate) {
+        const date = new Date(isoDate);
+        return formatDistanceToNow(date, { addSuffix: true });
+      }
 
     useEffect(() => {
         getArticleComment(articleId).then((data) => {
@@ -16,9 +23,11 @@ export default function ArticleComments({articleId}) {
     if (comments && !isLoading){  return(
         comments.map((comment) => {
             return <div className="comment-card" key={comment.comment_id}>
-            <p>Author: {comment.author}</p>
-            <p>Created: {comment.created_at}</p>
-            <p>Comment: {comment.body}</p>
+                <div className="author-date-comment">
+                    <h5 className="card-author">{comment.author}</h5>
+                    <p className="ac-date">{formatDateToAgo(comment.created_at)}</p>
+                </div>
+            <p className="comment-text">Comment: {comment.body}</p>
             <p>Votes: {comment.votes}</p>
             </div>
         })

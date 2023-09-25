@@ -4,10 +4,17 @@ import { getSelectedArticle } from './utils/api';
 import Votes from './Votes';
 import ArticleComments from './ArticleComments';
 import AddComment from './AddComment';
+import { formatDistanceToNow } from 'date-fns';
+
 
 
 
 export default function SingleArticle({votes, setVotes}) {
+
+    function formatDateToAgo(isoDate) {
+        const date = new Date(isoDate);
+        return formatDistanceToNow(date, { addSuffix: true });
+      }
 
 
     const {id} = useParams()
@@ -42,7 +49,7 @@ export default function SingleArticle({votes, setVotes}) {
       <h1>{currentArticle.title}</h1>
             <div className="article-author-date-box">
                 <p>{currentArticle.author}</p>
-                <p>{currentArticle.created_at}</p>
+                <p className='ac-date'>{formatDateToAgo(currentArticle.created_at)}</p>
             </div>
             <div className="article-text-box">
                 <p>{currentArticle.body}</p>
@@ -52,7 +59,10 @@ export default function SingleArticle({votes, setVotes}) {
         
             
         </div>
+        <div className="all-article-comments">
+            <h3 className='comment-title'>Comments...</h3>
         <ArticleComments articleId={currentArticle.article_id}/>
+        </div>
         <AddComment articleId={currentArticle.article_id}/>
     </div>
         )

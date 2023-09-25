@@ -15,7 +15,7 @@ export default function ArticleCard({article}) {
             <div className='image-container'>
             <Link to={`/articles/${article.article_id}`}>
                 <img src={article.article_img_url} className="card-image"/>
-                <div className="votes-overlay">
+                <div className="votes-overlay-all">
                 <Icon icon="clarity:thumbs-up-solid" hFlip={false} vFlip={false}></Icon>
                 <div className="ac-votes-spacer" style={{paddingLeft: 5}}></div>
                 {article.votes}
