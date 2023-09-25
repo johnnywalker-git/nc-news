@@ -48,6 +48,7 @@ export default function HomeAllArticles() {
     
     (   
         <div className="home-all-articles">
+            <div className="sort-bar">
             <form action="">
             <label htmlFor="order">Sort by:</label>
                 <select name="order" id="order" onChange={handleSortChange}>
@@ -64,6 +65,7 @@ export default function HomeAllArticles() {
                 </select>
                 <button>Reset</button>
             </form>
+            </div>
             <div className="h-a-a-heading">
             <h1>{topic ? `${topic.charAt(0).toUpperCase() + topic.slice(1)} Articles` : "All Articles"}</h1>
             </div>

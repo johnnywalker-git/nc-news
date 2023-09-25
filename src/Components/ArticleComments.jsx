@@ -28,7 +28,6 @@ export default function ArticleComments({articleId}) {
                     <p className="ac-date">{formatDateToAgo(comment.created_at)}</p>
                 </div>
             <p className="comment-text">Comment: {comment.body}</p>
-            <p>Votes: {comment.votes}</p>
             </div>
         })
     ) } 

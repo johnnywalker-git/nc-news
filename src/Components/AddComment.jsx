@@ -17,41 +17,47 @@ export default function AddComment({articleId}) {
         setIsError(err.message)
     })
 },[formData])
-
+    
 
 
     return formData && !isError ?  (
             <div className="newComment">
-            <form onSubmit={addComment}>
-                <div className="comment-card">
-            <p>Author: {formData.username}</p>
-            <p>Comment: {formData.body}</p>
-            <div className="add-comment-container">
-                <label htmlFor="name-box">
-                <input placeholder="name" name="nameBox"alt="name box" id="name-box"></input>
-                </label>
-                <label htmlFor="comment-box">
-                <textarea placeholder="Comment" name="commentBox" id="comment-box"/>
-                </label>
-                <button alt="submit-button">Submit</button>
+             <div className="comment-card">
+                <div className="author-date-comment">
+                    <h5 className="card-author">cooljmessy</h5>
+                    <p className="ac-date">just now...</p>
                 </div>
-                </div>
-            </form>
+                <p className="comment-text">{formData.body}</p>
             </div>
+             <div className="add-comment-container">
+             <form onSubmit={addComment}>
+                 <label htmlFor="name-box">
+                 <input placeholder="name" name="nameBox"alt="name box" id="name-box" value="cooljmessy"></input>
+                 </label>
+                 <label htmlFor="comment-box">
+                 <textarea name="commentBox" id="comment-box" placeHolder="Have your say..."/>
+                 </label>
+                 <button alt="submit-button">Submit</button>
+             </form>
+         </div>
+         </div>
         ): 
     (
         <div className="error-state-post-comment">
         <p>{isError}</p>
-    <div className="add-comment-container">
-        <form onSubmit={addComment}>
-            <label htmlFor="name-box">
-            <input placeholder="name" name="nameBox"alt="name box" id="name-box" value="cooljmessy" disabled="true"></input>
-            </label>
-            <label htmlFor="comment-box">
-            <textarea placeholder="Comment" name="commentBox" id="comment-box"/>
-            </label>
-            <button alt="submit-button">Submit</button>
-        </form>
+        <div className="newComment">
+
+        <div className="add-comment-container">
+             <form onSubmit={addComment}>
+                 <label htmlFor="name-box">
+                 <input placeholder="name" className="card-author" name="nameBox"alt="name box" id="name-box" value="cooljmessy"></input>
+                 </label>
+                 <label htmlFor="comment-box">
+                 <textarea name="commentBox" id="comment-box" placeHolder="Have your say..."/>
+                 </label>
+                 <button alt="submit-button">Submit</button>
+             </form>
+         </div>
     </div>
     </div>
     )

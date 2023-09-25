@@ -48,7 +48,7 @@ export default function SingleArticle({votes, setVotes}) {
             <div className="article-info-box">
       <h1>{currentArticle.title}</h1>
             <div className="article-author-date-box">
-                <p>{currentArticle.author}</p>
+                <h5>{currentArticle.author}</h5>
                 <p className='ac-date'>{formatDateToAgo(currentArticle.created_at)}</p>
             </div>
             <div className="article-text-box">
