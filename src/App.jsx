@@ -16,10 +16,10 @@ function App() {
        <Header />
        <Nav topics={topics} setTopics={setTopics} />
           <Routes>
-          <Route path="nc-news-jw.netlify.app/" element={<HomeAllArticles />} />
-          <Route path="nc-news-jw.netlify.app/articles" element={<HomeAllArticles />} />
-          <Route path="nc-news-jw.netlify.app/articles/topics/:topic" element={<HomeAllArticles />} />
-          <Route path="nc-news-jw.netlify.app/articles/:id" element={<SingleArticle votes={votes} setVotes={setVotes}/>} />
+          <Route path="/" element={<HomeAllArticles />} />
+          <Route path="/articles" element={<HomeAllArticles />} />
+          <Route path="/articles/topics/:topic" element={<HomeAllArticles />} />
+          <Route path="/articles/:id" element={<SingleArticle votes={votes} setVotes={setVotes}/>} />
           <Route path="*" element={<p>"No Route found"</p>} />
           </Routes>
       </div>
