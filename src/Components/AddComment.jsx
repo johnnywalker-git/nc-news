@@ -53,7 +53,7 @@ export default function AddComment({articleId}) {
                  <input placeholder="name" className="card-author" name="nameBox"alt="name box" id="name-box" value="cooljmessy"></input>
                  </label>
                  <label htmlFor="comment-box">
-                 <textarea name="commentBox" id="comment-box" placeHolder="Have your say..."/>
+                 <input type="text "name="commentBox" id="comment-box" placeHolder="Have your say..."/>
                  </label>
                  <button alt="submit-button">Submit</button>
              </form>

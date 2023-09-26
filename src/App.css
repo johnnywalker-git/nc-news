@@ -25,11 +25,6 @@ h3 {
   margin: .5em;
 }
 
-.card-author {
-align-self: flex-start;
-text-align: right;
-margin-right: 1em;
-}
 
 
 
@@ -132,9 +127,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   margin: 10px;
-  background-color: white;
   width: 80%;
   border: 4px solid white;
   border-radius: 20px;
@@ -147,10 +140,13 @@ a {
   align-items: center;
   justify-content: space-around;
   text-align: center;
+  
 }
 
 form input {
+  border: .5px solid black;
   text-align: center;
+  border-radius: 5px;
 }
 
 
@@ -202,11 +198,40 @@ border: solid 2px #d62828;
 }
 
 .sort-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.sort-bar form {
+  padding: 10px;
+  width: 100%;
   background-color: red;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  padding-top: 10px;
+  font-family: 'Inconsolata', monospace;
 }
+
+.add-comment-container form {
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.add-comment-container button {
+  align-self: flex-end;
+}
+
+.card-author {
+  text-align: left;
+  font-family: 'Inconsolata', monospace;
+
+}
+
+
+
 
 .nav-bar ul {
     display: flex;
@@ -444,10 +469,25 @@ border: solid 2px #d62828;
     align-items: center;
   }
 
+  .add-comment-container #comment-box {
+    width: 100%;
+    height: 60px;
+  }
+
+
+  label {
+    display: block;
+    width: 100%; /* This makes the label span the full width of its container */
+  }
+
   .article-author-date-box {
     display: flex;
     width: 100%;
     justify-content: space-between;
+  }
+
+  .hidden {
+    display: none;
   }
 
   .article-author-date-box .ac-date {
@@ -496,5 +536,29 @@ border: solid 2px #d62828;
     margin: 2px;
   }
 
+  .mobile-menu-icon {
+    display: none;
+  }
 
+  /* Media */
+  @media only screen and (max-width: 600px) {
+    .nav-bar {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+    }
 
+    .nav-bar button {
+      width: 200px;
+      text-align: center;
+      align-items: center;
+      margin: 2px;
+      justify-content: center;
+    }
+
+    .mobile-menu-icon {
+      display: flex;
+      align-self: flex-end;
+    }
+  }
