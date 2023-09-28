@@ -12,7 +12,7 @@ function App() {
   const [topics, setTopics] = useState(["placeholder", "placeholder2"])
   const [votes,setVotes] = useState("hello")
   return (
-      <div>
+      <div className='app-wrapper'>
        <Header />
        <Nav topics={topics} setTopics={setTopics} />
           <Routes>

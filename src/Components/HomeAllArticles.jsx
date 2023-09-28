@@ -41,8 +41,9 @@ export default function HomeAllArticles() {
     }
 
     return loading ? 
-    ( <div>
+    ( <div className="loading-screen">
             <div className="loader" alt="website loading"></div>
+            <h3>Please allow up to 2 mins for the assets to load</h3>
         </div>
     )   : 
     
