@@ -80,10 +80,9 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
     width: 100%;
     align-items: center;
-    border-bottom: 1px dotted rgb(191, 191, 191);
+    border: 1px solid white;
     padding: 20px;
 }
 
@@ -94,12 +93,6 @@ h1 {
 a {
   color: rgb(255, 254, 254);
 }
-
-#root {
-  background-color: rgb(135, 135, 135);
-}
-
-
 
 .content-card a {
   color: black;
@@ -121,6 +114,9 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
+
+
 
 
 .add-comment-container {
@@ -152,9 +148,25 @@ form input {
 
 
 .mobile-menu-icon {
-    background-color: red;
     padding: 6px;
     margin-right: 10px;
+}
+
+#root {
+  background: rgb(228,0,0);
+  background: linear-gradient(0deg, rgba(228,0,0,1) 0%, rgba(121,9,9,1) 35%, rgb(211, 0, 0) 100%);
+}
+
+.header-nav-wrapper {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("./assets/pexels-aleksandar-pasaric-3312216.jpg");
+  filter: brightness(25%) blur(30px);
+  z-index: -1;
 }
 
 
@@ -192,10 +204,10 @@ border: solid 2px #d62828;
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    background-color: red;
     width: 100%;
     border-radius: 0px 0px 5px 5px;
     padding: 0px 10px 0px 10px;
+    border: 1px solid white;
 }
 
 .sort-wrapper {
@@ -203,7 +215,6 @@ border: solid 2px #d62828;
   justify-content: center;
   flex-direction: row;
   width: 100%;
-  background-color: red;
 }
 
 .sort-bar {
@@ -229,7 +240,6 @@ border: solid 2px #d62828;
 .sort-bar form {
   padding: 10px;
   width: 100%;
-  background-color: red;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -280,13 +290,10 @@ border: solid 2px #d62828;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
-  
+  height: 100%
 }
 
-.home-all-articles, .full-article {
-  background-image: url("./assets/pexels-engin-akyurt-1493226.jpg");
-  backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
-}
+
 
 .image-container {
   position: relative;
@@ -367,21 +374,7 @@ border: solid 2px #d62828;
   z-index: 1; /* Ensure the votes overlay is above the image */
 }
 
-.home-all-articles::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: url("./assets/pexels-aleksandar-pasaric-3312216.jpg");
-  filter: brightness(25%) blur(30px);
-  z-index: -1;
-}
 
-.heading-container {
-  background-image: url("./assets/pexels-aleksandar-pasaric-3312216.jpg");
-}
 
 .content-card {
     position: relative;
@@ -404,20 +397,24 @@ border: solid 2px #d62828;
 }
 
 .article-info-box {
-  background-color: whitesmoke;
+    background-color: whitesmoke;
     border-radius: 20px;
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
     padding: 2em;
     margin: 1em;
-
 }
 
 
 
 .h-a-a-heading {
+  color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.h-a-a-heading h1 {
+  color: whitesmoke;
 }
 
 
@@ -454,7 +451,7 @@ border: solid 2px #d62828;
     border: 4px solid white;
     border-radius: 20px;
     margin: 1em;
-    max-width: 600px;
+    max-width: 400px;
     object-fit: fill;
     background-color: whitesmoke;
   }
@@ -576,6 +573,7 @@ border: solid 2px #d62828;
 
 .comment-title {
  text-align: left;
+ color: whitesmoke;
 }
 
   .comment-card {
@@ -600,7 +598,9 @@ border: solid 2px #d62828;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 1em;
+      padding: 0px 0px 30px 0px;
+      border-bottom: 2em;
+      border: 1px solid white;
     }
 
     .nav-bar button {

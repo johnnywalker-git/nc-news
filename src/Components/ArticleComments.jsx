@@ -27,7 +27,7 @@ export default function ArticleComments({articleId}) {
                     <h5 className="card-author">{comment.author}</h5>
                     <p className="ac-date">{formatDateToAgo(comment.created_at)}</p>
                 </div>
-            <p className="comment-text">Comment: {comment.body}</p>
+            <p className="comment-text">{comment.body}</p>
             </div>
         })
     ) } 
