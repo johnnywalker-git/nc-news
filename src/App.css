@@ -457,7 +457,6 @@ border: solid 2px #d62828;
     border: 4px solid white;
     border-radius: 20px;
     margin: 1em;
-    max-width: 400px;
     object-fit: fill;
     background-color: whitesmoke;
   }
@@ -491,7 +490,7 @@ border: solid 2px #d62828;
     position: absolute; /* Set the votes overlay to absolute positioning */
     top: auto; /* Adjust the top position as needed */
     bottom: 5%;
-    left: 30%; /* Adjust the left position as needed */
+    left: 40%; /* Adjust the left position as needed */
     background-color: rgba(226, 226, 226, 0.793); /* Add background color */
     color: rgb(0, 0, 0);
     /* padding: 5px 10px; */
