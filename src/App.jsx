@@ -17,6 +17,7 @@ function App() {
        <Nav topics={topics} setTopics={setTopics} />
           <Routes>
           <Route path="/" element={<HomeAllArticles />} />
+          <Route path="/*" element={<HomeAllArticles />} />
           <Route path="/articles" element={<HomeAllArticles />} />
           <Route path="/articles/topics/:topic" element={<HomeAllArticles />} />
           <Route path="/articles/:id" element={<SingleArticle votes={votes} setVotes={setVotes}/>} />
