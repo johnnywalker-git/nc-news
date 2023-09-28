@@ -49,6 +49,9 @@ export default function HomeAllArticles() {
     
     (   
         <div className="home-all-articles">
+            <div className="h-a-a-heading">
+            <h1>{topic ? `${topic.charAt(0).toUpperCase() + topic.slice(1)} Articles` : "All Articles"}</h1>
+            </div>
             <div className="sort-wrapper">
             <div className="sort-bar">
             <form action="">
@@ -68,9 +71,6 @@ export default function HomeAllArticles() {
                 <button className="topic-button">Reset</button>
             </form>
             </div>
-            </div>
-            <div className="h-a-a-heading">
-            <h1>{topic ? `${topic.charAt(0).toUpperCase() + topic.slice(1)} Articles` : "All Articles"}</h1>
             </div>
             <div className="article-cards">
        {articles.map((article) => {

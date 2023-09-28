@@ -11,8 +11,8 @@ import SingleArticle from './Components/SingleArticle';
 function App() {
   const [topics, setTopics] = useState(["placeholder", "placeholder2"])
   const [votes,setVotes] = useState("hello")
-  return (
-      <div className='app-wrapper'>
+  return (  
+        <div>
        <Header />
        <Nav topics={topics} setTopics={setTopics} />
           <Routes>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/articles/:id" element={<SingleArticle votes={votes} setVotes={setVotes}/>} />
           <Route path="*" element={<p>"No Route found"</p>} />
           </Routes>
-      </div>
+          </div>
   )
 }
 
