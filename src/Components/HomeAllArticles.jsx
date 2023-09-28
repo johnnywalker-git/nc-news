@@ -68,7 +68,7 @@ export default function HomeAllArticles() {
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
                 </select>
-                <button className="topic-button">Reset</button>
+
             </form>
             </div>
             </div>

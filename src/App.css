@@ -83,6 +83,7 @@ h3 {
     width: 100%;
     align-items: center;
     border: 1px solid white;
+    border-radius: 10px;
     padding: 20px;
 }
 
@@ -219,6 +220,10 @@ border: solid 2px #d62828;
 
 .sort-bar {
   width: 50%;
+  background-color: #ffffff;
+  border: solid #ffffff 2px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;  
+  border-radius: 10px;
 }
 
 .sort-bar label {
@@ -238,7 +243,7 @@ border: solid 2px #d62828;
 }
 
 .sort-bar form {
-  padding: 10px;
+  padding: 1px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -436,7 +441,8 @@ border: solid 2px #d62828;
 
   .article-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -473,7 +479,7 @@ border: solid 2px #d62828;
     align-items: center;
     justify-content: space-evenly;
     flex: 1; /* Allow it to grow and take up available space */
-    max-width: 600px;
+    width: 90%;
   }
 
   .article-info-box p {
@@ -592,7 +598,6 @@ border: solid 2px #d62828;
     display: none;
   }
 
-  /* Media */
   @media only screen and (max-width: 600px) {
     .nav-bar {
       flex-direction: column;
@@ -600,7 +605,8 @@ border: solid 2px #d62828;
       align-items: center;
       padding: 0px 0px 30px 0px;
       border-bottom: 2em;
-      border: 1px solid white;
+      border: 2px solid white;
+      border-radius: 10px;
     }
 
     .nav-bar button {
@@ -614,5 +620,9 @@ border: solid 2px #d62828;
     .mobile-menu-icon {
       display: flex;
       align-self: flex-end;
+    }
+
+    .sort-bar {
+      width: 90%;
     }
   }
